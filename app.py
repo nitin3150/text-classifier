@@ -72,6 +72,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 import joblib
 from pydantic import BaseModel
 from typing import List
@@ -79,7 +80,7 @@ import os
 
 # Define the FastAPI app
 app = FastAPI(title="StackOverflow Text Classifier")
-
+app.add_middleware(CORSMiddleware,allow_origins=['*'])
 # Serve static files (CSS, JS, etc.)
 # app.mount("/static", StaticFiles(directory="static"), name="static")
 
