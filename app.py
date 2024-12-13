@@ -10,7 +10,7 @@ import os
 # Define the FastAPI app
 app = FastAPI(title="StackOverflow Text Classifier")
 origins = [
-    "https://cedar-style-444500-q5.uc.r.appspot.com",
+    "https://cedar-style-444500-q5.uc.r.appspot.com","*"
 ]
 
 app.add_middleware(
